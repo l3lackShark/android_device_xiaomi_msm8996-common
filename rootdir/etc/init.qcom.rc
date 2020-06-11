@@ -228,6 +228,8 @@ on fs
     wait /dev/block/bootdevice
     mount_all fstab.qcom
     swapon_all fstab.qcom
+    write /dev/wcnss_wlan 1
+    write /sys/module/wlan/parameters/fwpath "sta"
 
 on post-fs-data
     # Create directories for fingerprint
